@@ -34,17 +34,17 @@ def extract_key_frames(video_path, output_folder, delay_seconds):
                 
             key_frame_path = f"{output_folder}/key_frame_{key_frame_number}.jpg"
             cv2.imwrite(key_frame_path, frame)
-            print(f"Đã trích xuất: {key_frame_path}")
+            # print(f"Đã trích xuất: {key_frame_path}")
 
-            print(get_caption_VIT32.generate_caption(key_frame_path))
-            print(get_caption_RN50.get_single_caption(key_frame_path))
+            # print(get_caption_VIT32.generate_caption(key_frame_path))
+            # print(get_caption_RN50.get_single_caption(key_frame_path))
             key_frame_number += 1
         
         frame_number += 1
 
     # Giải phóng video capture object
     cap.release()
-    print("Hoàn tất trích xuất key frame")
+    # print("Hoàn tất trích xuất key frame")
 
 # Đường dẫn đến video và thư mục lưu trữ frame
 # video_path = 'test3.mp4'
