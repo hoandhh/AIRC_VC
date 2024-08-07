@@ -74,4 +74,4 @@ def extract_key_frames(video_path, output_folder, delay_seconds, session_id, opt
     print("Hoàn tất trích xuất key frame")
 
 # Đường dẫn đến video và thư mục lưu trữ frame
-# extract_key_frames("E:/AIRC2024/AIRC_VC/services/test2.mp4", "output", 2, "test1", "tooth_captioning")
+# extract_key_frames("C:/Users/ASUS/Documents/AIRC_VC/services/test2.mp4", "output", 2, "test1", "tooth_captioning")

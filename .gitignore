@@ -2,3 +2,5 @@
 .venv
 __pycache__
 poppler-*
+# Ignore transformer_weights.pt
+/modules/module_ex/pretrained_models/tooth/RN50x4/transformer_weights.pt
