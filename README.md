@@ -1,6 +1,6 @@
 # AIRC_Video_Captioning
 
-# Image Captioning for Dental Education / Chú Thích Hình Ảnh Trong Nha Khoa, Hành Động Trong Lớp Học
+#  Chú Thích Hình Ảnh Trong Nha Khoa, Hành Động Trong Lớp Học
 
 Dự án này nhằm phát triển một hệ thống chú thích hình ảnh cho nha khoa, hoặc các hành động trong lớp học, tập trung vào việc tạo ra các chú thích cho hình ảnh và video liên quan đến răng hoặc các hành động trong lớp học. Hệ thống sẽ sử dụng các kỹ thuật học sâu để tự động mô tả nội dung của hình ảnh và video nha khoa, cung cấp các chú thích thông tin để hỗ trợ việc giảng dạy và học tập.
 
