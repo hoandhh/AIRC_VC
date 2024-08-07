@@ -1,9 +1,8 @@
 import cv2
 import os
-import get_caption_VIT32
-import get_caption_RN50
 
-def extract_key_frames(video_path, output_folder, delay_seconds):
+
+def extract_key_frames(video_path, output_folder, delay_seconds, session_id):
     # Mở video bằng OpenCV
     cap = cv2.VideoCapture(video_path)
     
@@ -21,7 +20,6 @@ def extract_key_frames(video_path, output_folder, delay_seconds):
     print(f"Số frame tương ứng với {delay_seconds} giây: {frame_interval} frame")
     
     frame_number = 0
-    key_frame_number = 0
     
     while cap.isOpened():
         ret, frame = cap.read()
@@ -31,24 +29,26 @@ def extract_key_frames(video_path, output_folder, delay_seconds):
         if frame_number % frame_interval == 0:
             if not os.path.exists(output_folder):
                 os.makedirs(output_folder)
+            session_folder = os.path.join(output_folder, session_id)
+            if not os.path.exists(session_folder):
+                os.makedirs(session_folder)
                 
-            key_frame_path = f"{output_folder}/key_frame_{key_frame_number}.jpg"
+            # Tính toán thời gian của keyframe hiện tại
+            timestamp_seconds = frame_number / fps
+            # Định dạng thời gian thành chuỗi để dùng làm tên file
+            time_str = f"{int(timestamp_seconds // 3600):02d}-{int((timestamp_seconds % 3600) // 60):02d}-{int(timestamp_seconds % 60):02d}"
+            
+            key_frame_path = f"{output_folder}/{session_id}/{time_str}.jpg"
             cv2.imwrite(key_frame_path, frame)
-            # print(f"Đã trích xuất: {key_frame_path}")
 
-            # print(get_caption_VIT32.generate_caption(key_frame_path))
-            # print(get_caption_RN50.get_single_caption(key_frame_path))
-            key_frame_number += 1
-        
+            # os.remove(key_frame_path)
+
         frame_number += 1
 
     # Giải phóng video capture object
     cap.release()
-    # print("Hoàn tất trích xuất key frame")
+    print("Hoàn tất trích xuất key frame")
 
 # Đường dẫn đến video và thư mục lưu trữ frame
-# video_path = 'test3.mp4'
-# output_folder = 'keyframe'
-# delay_seconds = 2
 
-extract_key_frames(video_path, output_folder, delay_seconds)
+
