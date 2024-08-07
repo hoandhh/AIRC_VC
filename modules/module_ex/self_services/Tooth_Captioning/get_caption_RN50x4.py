@@ -54,10 +54,14 @@ CUDA = get_device
 current_directory = os.getcwd()
 save_path = os.path.join(os.path.dirname(current_directory), "pretrained_models")
 os.makedirs(save_path, exist_ok=True)
-model_path = "./pretrained_models/resnet50tooth.pt"
+# model_path = "./pretrained_models/resnet50tooth.pt"
+
+# Lấy đường dẫn tuyệt đối của thư mục hiện tại
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.abspath(os.path.join(current_dir, "../../"))
+model_path = os.path.join(parent_dir, "pretrained_models","tooth", "RN50x4", "transformer_weights.pt")
 
 #@title Model
-
 
 class MappingType(Enum):
     MLP = 'mlp'
@@ -454,4 +458,4 @@ def get_single_caption(path):
         generated_text_prefix = generate2(model, tokenizer, embed=prefix_embed)
     return generated_text_prefix
 
-print(get_single_caption(image_path))
+# print(get_single_caption(image_path))

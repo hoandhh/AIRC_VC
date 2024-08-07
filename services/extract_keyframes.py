@@ -1,8 +1,11 @@
 import cv2
 import os
+import sys
 
 
-def extract_key_frames(video_path, output_folder, delay_seconds, session_id):
+
+
+def extract_key_frames(video_path, output_folder, delay_seconds, session_id, optional):
     # Mở video bằng OpenCV
     cap = cv2.VideoCapture(video_path)
     
@@ -10,6 +13,9 @@ def extract_key_frames(video_path, output_folder, delay_seconds, session_id):
     if not cap.isOpened():
         print("Không thể mở video")
         return
+    
+    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../modules/module_ex/self_services/', optional)))
+    import get_caption_RN50x4
 
     # Lấy frame rate của video
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -40,6 +46,24 @@ def extract_key_frames(video_path, output_folder, delay_seconds, session_id):
             
             key_frame_path = f"{output_folder}/{session_id}/{time_str}.jpg"
             cv2.imwrite(key_frame_path, frame)
+            
+        
+            if optional == "tooth_captioning":
+                # from modules.module_ex.self_services.tooth_captioning import get_caption_RN50x4
+                
+                print (get_caption_RN50x4.get_single_caption(key_frame_path))
+            elif optional == "action_captioning":
+                # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../modules/self_services/action_captioning')))
+                # import get_caption_RN50x4
+                # return get_caption_RN50x4.get_caption(key_frame_path)
+                return None
+            elif optional == "classroom_captioning":
+                # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../modules/self_services/classroom_captioning')))
+                # import get_caption_RN50x4
+                # return get_caption_RN50x4.get_caption(key_frame_path)
+                return None
+            else:
+                return None
 
             # os.remove(key_frame_path)
 
@@ -50,5 +74,4 @@ def extract_key_frames(video_path, output_folder, delay_seconds, session_id):
     print("Hoàn tất trích xuất key frame")
 
 # Đường dẫn đến video và thư mục lưu trữ frame
-
-
+# extract_key_frames("E:/AIRC2024/AIRC_VC/services/test2.mp4", "output", 2, "test1", "tooth_captioning")
