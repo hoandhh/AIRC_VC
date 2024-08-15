@@ -57,10 +57,8 @@ os.makedirs(save_path, exist_ok=True)
 
 # Lấy đường dẫn tuyệt đối của thư mục hiện tại
 current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.abspath(os.path.join(current_dir, "../../"))
-model_path = os.path.join(
-    parent_dir, "pretrained_models", "tooth", "RN50x4", "transformer_weights.pt"
-)
+parent_dir = os.path.abspath(os.path.join(current_dir, "../"))
+model_path = os.path.join(parent_dir, "output", "transformer_weights.pt")
 
 # @title Model
 

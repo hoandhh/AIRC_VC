@@ -10,3 +10,5 @@ captions_data = []
 
 def get_all_captions(image_path, captions_data):
     return get_all_caption(image_path, captions_data)
+
+print(get_single_caption("E:/AIRC2024/AIRC_VC/modules/clip_gpt2/run.jpg"))
