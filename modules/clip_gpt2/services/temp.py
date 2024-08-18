@@ -1,7 +1,12 @@
 # @title Imports
+import os
+import sys
+
+__dir__ = os.path.dirname(__file__)
+sys.path.append(os.path.abspath(os.path.join(__dir__, "../models")))
+sys.path.append(os.path.abspath(os.path.join(__dir__, "../utils")))
 
 import clip
-import os
 import numpy as np
 import torch
 from typing import Tuple, List, Union, Optional
@@ -17,9 +22,9 @@ import PIL.Image
 from skimage import io
 import PIL
 import json
-from models.model import ClipCaptionPrefix
-from utils.generate_normal import generate2
-from utils.generate_beam import generate_beam
+from model import ClipCaptionPrefix
+from generate_normal import generate2
+from generate_beam import generate_beam
 
 
 N = type(None)
