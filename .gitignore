@@ -4,3 +4,4 @@ __pycache__
 poppler-*
 # Ignore transformer_weights.pt
 /modules/module_ex/pretrained_models/tooth/RN50x4/transformer_weights.pt
+/modules/clip_gpt2/output/transformer_weights.pt

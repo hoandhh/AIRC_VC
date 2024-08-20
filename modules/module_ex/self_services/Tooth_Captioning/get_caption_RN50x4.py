@@ -413,7 +413,7 @@ def get_all_caption(image_dir,captions_data ):
             
             image = io.imread(file_path)
             pil_image = PIL.Image.fromarray(image)
-            display(pil_image)
+            #display(pil_image)
             
             image = preprocess(pil_image).unsqueeze(0).to(device)
             
@@ -435,7 +435,7 @@ def get_all_caption(image_dir,captions_data ):
         json.dump(captions_data, f, indent=4)
 
 
-image_path = "./sample/01220.JPG"
+image_path = "C:/Users/ASUS/Documents/AIRC_VC/modules/module_ex/self_services/Tooth_Captioning/sample/01220.JPG"
 def get_single_caption(path):
 
     use_beam_search = False #@param {type:"boolean"}  
@@ -458,4 +458,4 @@ def get_single_caption(path):
         generated_text_prefix = generate2(model, tokenizer, embed=prefix_embed)
     return generated_text_prefix
 
-# print(get_single_caption(image_path))
+print(get_single_caption(image_path))

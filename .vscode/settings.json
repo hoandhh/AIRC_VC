@@ -1,6 +1,7 @@
 {
     "python.analysis.extraPaths": [
         "./modules/module_ex/self_services/Tooth_Captioning",
-        "./services"
+        "./services",
+        "./utils"
     ]
 }
