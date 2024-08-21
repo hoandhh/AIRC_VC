@@ -8,7 +8,7 @@ import cv2
 import logging
 from utils.function_global import calculate_delay
 from flask import current_app as app
-from modules.clip_gpt2.services.temp import get_single_caption
+from modules.get_captions.services.temp import get_single_caption
 from utils.global_vars import sessions
 
 def extract_key_frames_from_url(app, video_url, output_folder, session_id):
