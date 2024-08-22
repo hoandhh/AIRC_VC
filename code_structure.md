@@ -37,13 +37,15 @@
         └── __init__.py
         └── user_model.py
     └── 📁modules   # 2 mô hình khác nhau
-        └── 📁Yolo_LLM   # Bổ sung sau
-        └── 📁Clip_Gpt2
+        └── 📁yolo_llm   # Bổ sung sau
+        └── 📁clip_gpt2
             └── 📁models
                 └── __init__.py
-                └── model.py    # Các model cần sử dụng
-            └── 📁output
-                └── temp.txt
+                └── model.py    # Transformer, GPT2, Mapping network
+            └── 📁output        # Các file pretrained theo từng chủ đề
+                └── tooth_caption.pt
+                └── classroom_caption.pt
+                └── action_caption.pt
             └── 📁services
                 └── __init__.py
                 └── getcaption.py   # Lấy nhiều caption và lấy một caption
