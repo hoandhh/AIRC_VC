@@ -8,9 +8,9 @@ sys.path.append(os.path.abspath(os.path.join(__dir__, "../utils")))
 import clip
 import numpy as np
 import torch
-from models.clip_gpt2.clip_caption import ClipCaptionPrefix
-from utils.generate_beam import generate_beam
-from utils.generate_normal import generate2
+from modules.get_captions.models.clip_gpt2.clip_caption import ClipCaptionPrefix
+from modules.get_captions.utils.generate_beam import generate_beam
+from modules.get_captions.utils.generate_normal import generate2
 from typing import Tuple, List, Union, Optional
 from transformers import GPT2Tokenizer
 from skimage import io
