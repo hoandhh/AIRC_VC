@@ -8,8 +8,9 @@ import cv2
 import logging
 from utils.function_global import calculate_delay
 from flask import current_app as app
-from modules.get_captions.services.temp import get_single_caption
+# from modules.get_captions.services.temp import get_single_caption
 from utils.global_vars import sessions
+from caption_image_yolo_llm import caption_image
 
 
 def extract_key_frames(application, video_path, output_folder, session_id):
@@ -36,7 +37,7 @@ def extract_key_frames(application, video_path, output_folder, session_id):
                 
             key_frame_path = f"{output_folder}/key_frame_{key_frame_number}.jpg"
             cv2.imwrite(key_frame_path, frame)
-            caption = get_single_caption(key_frame_path)
+            caption = caption_image(key_frame_path)
             with application.app_context():
                 sessions[session_id]["captions"].put(caption)
             logging.info(f"Generated caption for session {session_id}: {caption}") 

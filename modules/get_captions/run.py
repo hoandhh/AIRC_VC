@@ -2,6 +2,7 @@ import time
 import models.yolo_llm.get_person as get_person
 import models.yolo_llm.get_data as get_data
 import models.yolo_llm.gemini_api as gemini_api
+import os
 import cv2
 
 # cap = cv2.VideoCapture('')
@@ -13,7 +14,10 @@ import cv2
 #     _, image = cap.read()
 #     count += 1
 #     if count % 125 == 0:
-image = "testimg.png"
+current_dir = os.path.dirname(__file__)
+image_path = os.path.join(current_dir, "testimg.png")
+
+image = image_path
 
 start_time = time.time()
 get_person.get(image)

@@ -6,7 +6,8 @@ import shutil
 def get():
     
     # Load mô hình YOLO đã huấn luyện
-    model = YOLO('best.pt')  # Thay thế bằng mô hình bạn muốn sử dụng
+    model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../output/best.pt"))
+    model = YOLO(model_path)  # Thay thế bằng mô hình bạn muốn sử dụng
 
     folder_path = 'runs/detect'
     subfolders = [f for f in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, f))]

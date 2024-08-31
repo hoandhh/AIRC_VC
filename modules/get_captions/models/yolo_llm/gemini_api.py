@@ -7,12 +7,16 @@ See the getting started guide for more information:
 https://ai.google.dev/gemini-api/docs/get-started/python
 """
 
-import os
-
 import google.generativeai as genai
 import csv
 import time
-import models.yolo_llm.get_data as get_data
+import os
+import sys
+
+__dir__ = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.abspath(os.path.join(__dir__, "../yolo_llm")))
+
+import get_data as get_data
 
 genai.configure(api_key="AIzaSyC8RGY-SXE4v5dv-2mpxLJJhZhCegE9lCc")
 

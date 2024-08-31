@@ -12,7 +12,7 @@
         └── order_controller.py
         └── product_controller.py
         └── user_controller.py
-        └── video_controller.py
+        └── video_controller.py # thực hiện logic xử lý với video, và trả về phản hồi thích hợp
     └── 📁database
         └── 📁database_access
             └── product_access.py
@@ -65,16 +65,16 @@
         └── base_service.py
     └── 📁routes
         └── __init__.py
-        └── routes.py
+        └── routes.py # các route để quản lý việc tải video lên, xử lý video, tạo phụ đề, và truy xuất phụ đề.
     └── 📁scripts
         └── automation_script.py
         └── performance_measurement.py
         └── project_management.py
     └── 📁services
         └── __init__.py
-        └── caption_service.py
-        └── video_processing_service.py
-        └── youtube_service.py
+        └── caption_service.py #Tạo caption cho mỗi key_frame của video 
+        └── video_processing_service.py #Xử lý tạo captions cho video url
+        └── youtube_service.py #Tải video từ youtube
     └── 📁tests
         └── __init__.py
         └── test_order.py
