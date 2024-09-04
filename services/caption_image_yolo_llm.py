@@ -2,7 +2,7 @@ import os
 import sys
 
 __dir__ = os.path.dirname(__file__)
-sys.path.append(os.path.join(__dir__, "../"))
+sys.path.append(os.path.join(__dir__, "../services"))
 import time
 import modules.get_captions.models.yolo_llm.get_person as get_person
 import modules.get_captions.models.yolo_llm.get_data as get_data

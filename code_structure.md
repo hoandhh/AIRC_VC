@@ -72,6 +72,7 @@
         └── project_management.py
     └── 📁services
         └── __init__.py
+        └── caption_image_yolo_llm.py # Tạo caption cho ảnh bằng yolo và model mới
         └── caption_service.py #Tạo caption cho mỗi key_frame của video 
         └── video_processing_service.py #Xử lý tạo captions cho video url
         └── youtube_service.py #Tải video từ youtube
