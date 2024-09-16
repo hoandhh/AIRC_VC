@@ -1,4 +1,4 @@
-from services.temp import get_single_caption, get_all_caption
+from modules.get_captions.services.service import get_single_caption, get_all_caption
 
 
 def get_caption(image_path):
