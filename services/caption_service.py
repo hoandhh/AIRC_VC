@@ -8,7 +8,7 @@ import cv2
 import logging
 from utils.function_global import calculate_delay
 from flask import current_app as app
-from modules.get_captions.services.temp import get_single_caption
+from modules.get_captions.services.service import get_single_caption
 from utils.global_vars import sessions
 
 
