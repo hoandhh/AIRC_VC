@@ -21,7 +21,7 @@ def extract_key_frames(application, video_path, output_folder, session_id):
 
     frames_per_second = video_capture.get(cv2.CAP_PROP_FPS)
     delay_seconds = calculate_delay(frames_per_second)
-    frame_interval = int(frames_per_second * delay_seconds)
+    frame_interval = int(10)
     
     frame_number = 0
     key_frame_number = 0
